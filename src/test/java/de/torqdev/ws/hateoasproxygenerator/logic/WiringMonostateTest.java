@@ -73,14 +73,8 @@ public class WiringMonostateTest {
 
     @Before
     @After
-    public void uninitWM() {
-        WmTestHelper.uninitialize();
+    public void unInitWM() {
+        WiringMonostate.serviceAnalyser = null;
+        WiringMonostate.codeGenerator = null;
     }
-
-    private static class WmTestHelper extends WiringMonostate {
-        static void uninitialize() {
-            WiringMonostate.serviceAnalyser = null;
-            WiringMonostate.codeGenerator = null;
-        }
-    };
 }
