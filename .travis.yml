@@ -1,0 +1,18 @@
+language: java
+jdk:
+  - oraclejdk8
+  - oraclejdk9
+os:
+  - linux
+  - osx
+
+matrix:
+  include:
+    - os: linux
+      jdk: oraclejdk8
+    - os: linux
+      jdk: oraclejdk9
+    - os: osx
+      jdk: oraclejdk8
+    - os: osx
+      jdk: oraclejdk9
