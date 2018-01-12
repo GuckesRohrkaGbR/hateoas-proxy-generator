@@ -1,5 +1,7 @@
 package de.torqdev.ws.hateoasproxygenerator.logic;
 
+import de.torqdev.ws.hateoasproxygenerator.dummies.DummyCodeGenerator;
+import de.torqdev.ws.hateoasproxygenerator.dummies.DummyServiceAnalyser;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -35,14 +37,12 @@ public class SimpleServiceHelperTest {
 
     @Test(expected = UnsupportedOperationException.class)
     public void whenFetchingCodeGenerators_returnsImmutableList() throws Exception {
-        createFilledServiceHelper().findAllCodeGenerators().add(new CodeGenerator() {
-        });
+        createFilledServiceHelper().findAllCodeGenerators().add(new DummyCodeGenerator());
     }
 
     @Test(expected = UnsupportedOperationException.class)
     public void whenFetchingServiceAnalysers_returnsImmutableList() throws Exception {
-        createFilledServiceHelper().findAllServiceAnalysers().add(new ServiceAnalyser() {
-        });
+        createFilledServiceHelper().findAllServiceAnalysers().add(new DummyServiceAnalyser());
     }
 
     private void assertOneElement(List<?> list) {
@@ -58,10 +58,8 @@ public class SimpleServiceHelperTest {
 
     private SimpleServiceHelper createFilledServiceHelper() {
         SimpleServiceHelper sh = createEmptyServiceHelper();
-        sh.codeGenerators.add(new CodeGenerator() {
-        });
-        sh.serviceAnalysers.add(new ServiceAnalyser() {
-        });
+        sh.codeGenerators.add(new DummyCodeGenerator());
+        sh.serviceAnalysers.add(new DummyServiceAnalyser());
         return sh;
     }
 }

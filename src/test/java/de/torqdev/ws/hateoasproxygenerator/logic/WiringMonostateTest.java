@@ -1,5 +1,7 @@
 package de.torqdev.ws.hateoasproxygenerator.logic;
 
+import de.torqdev.ws.hateoasproxygenerator.dummies.DummyCodeGenerator;
+import de.torqdev.ws.hateoasproxygenerator.dummies.DummyServiceAnalyser;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,14 +20,12 @@ public class WiringMonostateTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void whenInitializing_serviceAnalyserCantBeNull() throws Exception {
-        WiringMonostate.initialize(null, new CodeGenerator() {
-        });
+        WiringMonostate.initialize(null, new DummyCodeGenerator());
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void whenInitializing_codeGeneratorCantBeNull() throws Exception {
-        WiringMonostate.initialize(new ServiceAnalyser() {
-        }, null);
+        WiringMonostate.initialize(new DummyServiceAnalyser(), null);
     }
 
     @Test(expected = IllegalStateException.class)
@@ -66,15 +66,12 @@ public class WiringMonostateTest {
     }
 
     private void initWM() {
-        WiringMonostate.initialize(new ServiceAnalyser() {
-        }, new CodeGenerator() {
-        });
+        WiringMonostate.initialize(new DummyServiceAnalyser(), new DummyCodeGenerator());
     }
 
     @Before
     @After
-    public void unInitWM() {
-        WiringMonostate.serviceAnalyser = null;
-        WiringMonostate.codeGenerator = null;
+    public void setUp() {
+        WiringMonostateUtil.reset();
     }
 }
