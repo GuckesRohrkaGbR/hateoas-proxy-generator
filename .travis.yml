@@ -5,3 +5,11 @@ jdk:
 os:
   - linux
   - osx
+script:
+  - mvn test -Dgpg.skip
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
+addons:
+  sonarqube:
+    organization: "guckesrohrkagbr-github"
+    token:
+      secure: "brKPdiJadted7/kALByucnzyB/bumVQ5Z2fhviqzG7/8Y3/WZCpm2AtNSZgwQ42H7Y+vSVCfDiy8kPgH5iyfC750UWftJJxYiedabvuUAE1n0OjCy+JZtRK3Fs7VS9vjOWTrI46ug2M3RaTkZrfYMnKePKCwxed2BrbKyEb1YNwpNA5fw1o/IyrWK6QHGRH8/lTHbO8amCmxKPmmWKD2OcEgqIV839d1jH3qMDYJKfOmpci0c3w3uW+Kn+2bMQyqvvF34Jc5SeuzCl8ix1kzwP+onA3WDgiNhcZlT0Z+XEWDNhR8pk/xf+7xILO/jEkWbf2LZmdNrbCHQe/+SU/JOl1eWKFBzBbHWwkB2CqIaK96GAEt+7JSWAWONLiIZWKebfei+cO1QXpJwoQFn8II9YcHTuXEXV/BLgTHs6l6jTIU5kInTexMxAyqhuJmaWFa7NxfE+a/4IFN31U155clYzOp+L36xCbY7TD4siIHKirtjB2Bq+Kgfu6dK/lHt44w+aybxnmt1z9LjXppnPh0ZDlKK1tiOiUMDvxgKTek07KRLUU5jvrSz5Zcc7j8b1Wwg7PARklUg5Dl+jLgafLPpJkxbd11htU9oXbZAKYrPOkz/tMYbB8wlI7WCi6Y0O4bb5msNZL6wiVy52VeNpfFE6UdA4e224eH7v94teUrE8U="
