@@ -1,15 +1,22 @@
 language: java
-jdk:
-  - oraclejdk8
-  - oraclejdk9
-os:
-  - linux
-  - osx
-script:
-  - mvn test -Dgpg.skip
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
+sudo: false
+install: true
 addons:
   sonarqube:
-    organization: "guckesrohrkagbr-github"
+    organization: guckesrohrkagbr-github
     token:
-      secure: "pbQc0Yxlt2P696tztRD1Qys/uPd4piyM5bLipMLLK9olgW0U0Q/jGTAME/4JKZNq99DrOLqGPYcjzcv0NlzqGSK9Vu/jzUL96vOORNCeUMEPHIqNGm7JkfoQ7xCkszMavuMXM5mmrNWC7QQ8TOrfjcIdy7TA3cnNSi3KRVQVndT4GYH1bwzD8z0rjkyiN71SPw0ziPBHjEM1qcIKilNc++ggGAcIV3ObaYCwHPJyo9k2dDV2go0euCqtX1RMuIohU/69vg/l6pHdzx/GchTQajZJqDJFQ3RQGDu7O0HEGjttK5ncPoOCaWexbL8KsGaDCw8+4PtTanO2ZQXMQdmcys9iaxTU4fivSpEOIAsYTiq/7GPcKIFQ6PZiQxgxVBsHI2BC4hhbnAhjxuKvZVwFmp6ppfjtjthLbc4ZwfcnhwOo3NFy7ByUxkK2fUbhr3NfDHcYGsnZglB1oGyNuHX/+HM+2iTJh1UbfGI8bYmgREhD9auAYUdafgwVcKjOm4xi0nfIHr/gvMP0kiRfs1UPOzUHraZOdP4F9nX4ELwAy9+8RwrGs8o3lbSuXf51Z1g5Oe+gnnimJcpv36z1WuJVCfv+Y6hhddF+J6fyU/YeIkVvwPD+c2LpMG/h9QfGI26zSxgYjiEv8bW5EVIUPs2LiRnmiWgq3p+VX0HROC+kaTM="
+    secure: A2c1sYCtEFKsNZwvE1xExVvulJh2HaaZhisqQGtrVoIkG+ey4/aA8ib+9DwzeiyCYOXaugyhSazOA6K7V+491kXyHzG0im95qloWvs+gHPISu4B235ZzhOfj98AXcjFkOz1bWICOJzUiUoQmAi0VwIXh3z530TlUVmn6QFTJLYh9qtbIzgg+1PUqAUlo+23mHlKU5l4/MGhBZbMO5oAZ7/yAqqp6tvUTrlvsp9yEghTweysgs9ZE3w5cpLD2I7GezYTIJtxcXQ6gV/WhnxOQy2tRQ/HvgRvOQBpVH1YTat6gvqSxA8C3oS87513sDjmkK9EyiYtAgX9buBLzaaIXYeszHapwnF4oJvhMULNwpJpnhxnY9AUmlBIpgqkrGmkH2ix7AKU6se19L3uo40rq2umPwlYq3o9pnXDgHOXHCKF7ZM4zn4nLV+Qt8SQAYI3vTmi/iOC7QHiNJZVVR8WhfK/Ns6lczaTSk9DyGiEMYbNTJiT2etXPngh0r/DkxAzpCo4NJqRjhE1QeuDWGb0mkGvIqsyDLmTza5ofrwvQjUKfVBVyGXWGbb6wEaUVgMOq5tzTrboS4dhtnMUuMFpCNc18IaMp1saFtwoewyvzKcBPmBND+qtKUwNhi/gxvHeoG7IvwZfF0uiK2j6rdjA6EU/E+5CHfU59vY/M5Q3vJoc=
+jdk:
+- oraclejdk8
+- oraclejdk9
+os:
+- linux
+- osx
+script:
+- mvn test -Dgpg.skip
+- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
+cache:
+  directories:
+  - "$HOME/.m2/repository"
+  - "$HOME/.sonar/cache"
+
