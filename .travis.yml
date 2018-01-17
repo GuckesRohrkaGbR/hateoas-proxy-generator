@@ -6,8 +6,8 @@ jdk:
 os:
 - linux
 script:
-- mvn clean test -Dgpg.skip
-- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar -Dgpg.skip -Dsonar.organization=guckesrohrkagbr-github -Dsonar.login=$SONAR_TOKEN
+##- mvn clean test -Dgpg.skip
+- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar -Dgpg.skip -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=guckesrohrkagbr-github -Dsonar.login=$SONAR_TOKEN
 cache:
   directories:
   - "$HOME/.m2/repository"
