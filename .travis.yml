@@ -3,7 +3,7 @@ sudo: false
 install: true
 addons:
   sonarcloud:
-    organization: guckesrohrkagbr-github
+    organization: "guckesrohrkagbr-github"
     token:
       secure: "ab1ACWA9WyIUwgcnWt7CtZ/pMf4X/992H7FNHpDEGKTtOqyi6BZEi5QQlUlmmPYKPm1apitc1eby0tWWD87qPWy0KDP4J52jG1EMtsgfS0FMWEGBxrvclf3XSCp+TZ41VbM6GuDmZt3sOIOrVF0oUGox3Hf+i1Bte3BqVwI4RwmIbopOMw+tm9Zo/79OfaCwwuueR2VxFKsc05bb1287RxJNsLqvg+S7wHLEmCs7pOwfEa/m+ArbKYiUQoLK6Z/OaUjQB4jZFovq4hcjkG5zq1J0LMkNINSHotQpAABLspIrEs7gcOE+WdVPzFaVXW8z0BGlv1nl5pc47AbZNQz3Jna9rb0p1Yj18PJ40FXmX8x1dvSg18bBJof5nm9dCXizJCepOA9KA3HzTRBNodgWxfzr0OOjeQA6NjaDFH3eFsyO1TyvRpGblSlZ6i2olrMYY99lQX6actWk8IZqnRk6I35uTQzYvEMPSzy47N3z9+BnC8m311HbsXCNr+K8hMhkwEgJ1+6ATmU92tpVbaSFO4xyq334qFLN+vZnzwqN0u2ZhEB+i3UkRGr7wa47f4BWVDH4Uff/42lz0SpLls+hKZVnR+HZYYoz7vX76NaToSlbJadcB1PL3QI+QPmR8sYWw1zSBjspfwFDQkAw/c/0y30PHP1z4u76ode7IYRL0Vg="
 jdk:

@@ -89,7 +89,6 @@
                         </goals>
                         <configuration>
                             <rules>
-                                <!--  implementation is needed only for Maven 2  -->
                                 <rule implementation="org.jacoco.maven.RuleConfiguration">
                                     <element>BUNDLE</element>
                                     <limits>
